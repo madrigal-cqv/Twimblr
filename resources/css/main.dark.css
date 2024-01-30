@@ -1,0 +1,51 @@
+body {
+    color: black;
+    background-color: bisque;
+}
+
+h1 {
+    color: maroon;
+}
+
+nav {
+    background-color: beige;
+}
+
+nav > a {
+    color: #18181a;
+    border: 1px solid #18181a;
+}
+
+nav > a:hover {
+    background-color: bisque;
+}
+
+#para {
+    background-color: beige;
+    border: 1px #18181a solid;
+}
+
+.review {
+    border: 1px solid #18181a;
+}
+
+form {
+    background-color: beige;
+    border: 1px #18181a solid;
+}
+
+th, td {
+    border: 0.5px #18181a solid;
+}
+
+tr:nth-child(even) {
+    background-color: beige;
+}
+
+em {
+    color: blue;
+}
+
+#e404 > a {
+    color: #18181a;
+}

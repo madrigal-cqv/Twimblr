@@ -1,0 +1,44 @@
+include include/head.pug
+
+doctype html
+html(lang="en")
+  +head("Sticker Spectrum - Reviews")
+  body
+    include include/navbar.pug
+    .content
+      h1 Customer Reviews
+      h2 Check out this video!
+      iframe(width="560", height="315", src="https://www.youtube.com/embed/boAmZrUN55s?si=V8ccanKfQsKoCdeE", title="YouTube video player", allow=`accelerometer; autoplay; 
+        clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share`, allowfullscreen)
+      h2 Other notable reviews
+      #stats
+        div
+          span 4.7/5
+        div
+          span 13486
+          br
+          | reviews
+        div
+          span 94%
+          br
+          | would order again
+      #all-reviews
+        #row1
+          .review
+            p.review-body
+              | The durability is impressive! I stick them on my water bottle and they 
+              | are still as good as new after a year!
+            p.reviewer-name Alia C.
+          .review
+            p.review-body Amazing quality with great customer service!
+            p.reviewer-name Hannah S.
+          .review
+            p.review-body Love it. They threw some extras in as well.
+            p.reviewer-name Evan T.
+        #row2
+          .review
+            p.review-body Would order again, highly recommended
+            p.reviewer-name Corey K.
+          .review
+            p.review-body Packaged nicely and the print quality is amazing
+            p.reviewer-name James L.

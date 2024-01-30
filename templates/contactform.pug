@@ -1,0 +1,37 @@
+include include/head.pug
+
+doctype html
+html(lang="en")
+  +head("Sticker Spectrum - Contact us!")
+  script(src="/js/contact.js", defer)
+  body
+    include include/navbar.pug
+    .content
+      h1 Contact us for a quote!
+      form(action="/contact", method="POST")
+        p
+          label(for="name") Full name* 
+          input#name(type="text", name="name", placeholder="Chi Vu", required)
+        p
+          label(for="email") Email address* 
+          input#email(type="email", name="email", placeholder="vu000153@umn.edu", required)
+        p
+          label(for="type") Type of stickers* 
+          select#type(name="type", required)
+            option(value="") Unsure
+            option(value="diecut") Die cut stickers
+            option(value="kisscut") Kiss cut stickers
+            option(value="transfer") Transfer stickers
+            option(value="labels") Labels
+        p
+          label(for="size") Size (in inches)* 
+          input#size(type="number", name="size", min="1", max="18", required)
+        p
+          label(for="deadline") Deadline* 
+          input#deadline(type="date", name="deadline", required)
+        p
+          label(for="tos") I have read and agreed to Sticker Spectrum Terms of Services* 
+          input#tos(type="checkbox", name="tos", required)
+        p
+          input(type="submit", value="Submit")
+        #output

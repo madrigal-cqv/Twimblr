@@ -1,0 +1,190 @@
+@font-face {
+    font-family: "Inclusive Sans";
+    src: url("https://fonts.googleapis.com/css?family=Inclusive+Sans");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("https://fonts.googleapis.com/css?family=Open+Sans");
+}
+
+body {
+    margin: 0px;
+    font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+    color: white;
+    background: #18181a;
+}
+
+h1 { 
+    font-family: "Inclusive Sans", "Helvetica", Arial, sans-serif;
+    font-size: 50px;
+    color: wheat;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    background: #2e2d2d;
+    text-align: center;
+}
+
+nav > a {
+    font-size: 30px;
+    color: whitesmoke;
+    text-decoration: none;
+    border: 1px solid white;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 1em;
+}
+
+nav > a:hover {
+    background-color: #18181a;
+}
+
+iframe {
+    border: 0;
+    display: block;
+    margin: auto;
+}
+
+.content {
+    margin: auto;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 80%;
+}
+
+th, td {
+    border: 0.5px white solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+tr:nth-child(even) {
+    background-color: #2e2d2d;
+}
+
+#para {
+    width: 50%;
+    margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px white solid;
+    background-color: #2e2d2d;
+    border-radius: 1em;
+}
+
+#stats {
+    display: flex;
+    padding-left: 20%;
+    padding-right: 20%;
+    justify-content: space-around;
+}
+
+#stats > div {
+    padding: 15px;
+    text-align: center;
+}
+
+div > span {
+    font-size: 40px;
+}
+
+#all-reviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+}
+
+#row1 {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#row2 {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.review {
+    padding-left: 4%;
+    padding-right: 4%;
+    border: 1px solid white;
+    border-radius: 1em;
+    display: grid;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    font-style: italic;
+    justify-self: right;
+}
+
+#center {
+    margin: auto;
+    max-width: 75%;
+    padding-bottom: 1em;
+}
+
+#titleimg {
+    width: 100%;
+}
+
+form {
+    max-width: 50%;
+    margin: auto;
+    background-color: #2e2d2d;
+    padding: 0.5em 2em 0.5em 2em;
+    border: 1px white solid;
+    border-radius: 1em;
+}
+
+#e404 {
+    text-align: center;
+}
+
+#e404 > h1 {
+    font-size: 150px;
+    font-family: "Inclusive Sans", "Helvetica", Arial, sans-serif;
+}
+
+#e404 > a {
+    color: white;
+}
+
+strong {
+    color: red;
+}
+
+em {
+    color: aqua;
+}
+
+#sale {
+    font-size: 50px;
+    text-align: center;
+    color: red;
+    margin-top: 0.5em;
+}
+
+#sale_form {
+    text-align: center;
+    margin-top: 1em;
+}

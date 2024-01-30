@@ -1,0 +1,12 @@
+include include/head.pug
+
+doctype html
+html(lang="en")
+  +head("Cannot find page")
+  body
+    include include/navbar.pug
+    #e404
+      h1 404
+      h2 Page not found
+      p The page you&apos;re looking for does not exist or an error has occured.
+      a(href="/main") Return to main page
