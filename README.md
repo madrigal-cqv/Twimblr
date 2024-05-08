@@ -1,4 +1,4 @@
-# Twimblr
+# Introduction
 Final project for CSCI 4131, Fall 2023. Done by Chi Vu (vu000153)
 
 # List of features

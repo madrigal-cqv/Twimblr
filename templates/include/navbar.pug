@@ -1,6 +1,12 @@
-nav
-  a(href="/main") Home
-  a(href="/testimonies") Reviews
-  a(href="/contact") Contact us
-  a(href="/admin/contactlog") Contact List
-  button#toggle Toggle
+.header
+  div(id="page_name") 
+    a(href="/") Twimblr
+  div(id="menu_wrapper")
+    #session
+      a(href="/signin") Sign in
+      |
+      | / 
+      a(href="/signup")  Sign up
+    div
+      a(href="javascript:void(0);", id="menu_bar")
+        i.fa.fa-bars

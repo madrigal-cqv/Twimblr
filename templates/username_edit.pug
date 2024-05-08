@@ -1,0 +1,23 @@
+include include/head.pug
+
+doctype html
+html(lang="en")
+  +head("Twimblr - Change username")
+  script(src="/js/user_edit.js", defer)
+  body
+    include include/navbar.pug
+    include include/menu.pug
+    .content.signup
+      h1 Change username 
+      form#form(action="/edit/username" method="POST")
+        p
+          label(for="password") Password* 
+          input#password(type="password", name="password", placeholder="password", required)
+        p 
+          label(for="user_new") New username* 
+          input#user_new(type="text", name="user_new", placeholder="New username", required)
+          | 
+          span(class="notice") Max 100 characters
+        p
+          button#submit Change
+        p.notice#submit_noti

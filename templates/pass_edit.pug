@@ -1,0 +1,28 @@
+include include/head.pug
+
+doctype html
+html(lang="en")
+  +head("Twimblr - Change password")
+  script(src="/js/pass_edit.js", defer)
+  body
+    include include/navbar.pug
+    include include/menu.pug
+    .content.signup
+      h1 Change password
+      form#form(action="/edit/password" method="POST")
+        p
+          label(for="password") Password* 
+          input#password(type="password", name="password", placeholder="password", required)
+        p 
+          label(for="pass_new") New password* 
+          input#pass_new(type="password", name="pass_new", placeholder="New password", required)
+          | 
+          span(class="notice") Max 100 characters
+        p 
+          label(for="pass_new_re") Retype password* 
+          input#pass_new_re(type="password", name="pass_new_re", placeholder="New password", required)
+          | 
+          span#pass_verif(class="notice")
+        p
+          button#submit Change
+        p.notice#submit_noti

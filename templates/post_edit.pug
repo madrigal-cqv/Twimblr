@@ -1,0 +1,20 @@
+include include/head.pug
+
+doctype html
+html(lang="en")
+  +head("Twimblr - Edit post")
+  script(src="/js/post.js", defer)
+  body
+    include include/navbar.pug
+    include include/menu.pug
+    .content.signup
+      h1 Edit post 
+      form#form(action="/edit/post" method="POST")
+        p
+          label(for="post") Edit 
+          div#textarea_wrapper
+            textarea#post(name="post", rows="7", required) #{current_post}
+        input#post_id(type="hidden" value=`${post_id}` name="post_id")
+        p
+          button#submit Edit
+        p.notice#submit_noti

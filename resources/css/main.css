@@ -1,190 +1,216 @@
 @font-face {
-    font-family: "Inclusive Sans";
-    src: url("https://fonts.googleapis.com/css?family=Inclusive+Sans");
-}
-
-@font-face {
     font-family: "Open Sans";
     src: url("https://fonts.googleapis.com/css?family=Open+Sans");
 }
 
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url(https://fonts.gstatic.com/s/josefinsans/v32/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhLybpUVzEEQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
 body {
-    margin: 0px;
+    background-color: rgb(212, 229, 235);
+    margin: 0;
     font-family: "Open Sans", "Helvetica", Arial, sans-serif;
-    color: white;
-    background: #18181a;
-}
-
-h1 { 
-    font-family: "Inclusive Sans", "Helvetica", Arial, sans-serif;
-    font-size: 50px;
-    color: wheat;
-    text-align: center;
-}
-
-h2 {
-    text-align: center;
-}
-
-nav {
-    display: flex;
-    justify-content: space-evenly;
-    background: #2e2d2d;
-    text-align: center;
-}
-
-nav > a {
-    font-size: 30px;
-    color: whitesmoke;
-    text-decoration: none;
-    border: 1px solid white;
-    padding-left: 2%;
-    padding-right: 2%;
-    border-radius: 1em;
-}
-
-nav > a:hover {
-    background-color: #18181a;
-}
-
-iframe {
-    border: 0;
-    display: block;
-    margin: auto;
+    padding-bottom: 1.5em;
 }
 
 .content {
+    width: 85%;
     margin: auto;
 }
 
-table {
-    margin: auto;
-    border-collapse: collapse;
-    table-layout: auto;
-    width: 80%;
+.poster {
+    display: flex;
+    justify-content: space-between;
 }
 
-th, td {
-    border: 0.5px white solid;
-    padding-left: 10px;
-    padding-right: 10px;
+.post {
+    background-color: white;
+    margin: 1em;
+    padding: 1em 2em 1em 2em;
+    border-radius: 1em;
+    box-shadow: 0 0 3px rgb(137, 137, 227);
+}
+
+.header {
+    display: flex;
+    position: sticky;
+    top: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1.5%;
+    padding: 1em 5% 0.75em 5%;
+    color: white;
+    background-color: rgb(12, 12, 85);
+    box-shadow: 0 0 3px rgb(137, 137, 227);
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+#menu, #filter {
+    display: block;
+    width: 150px;
+    position: fixed;
+    right: 1%;
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+    list-style-type: none;
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 0 0 3px rgb(137, 137, 227);
+    visibility: hidden;
+}
+
+#filter {
+    bottom: 72px;
+}
+
+#filter a {
+    text-decoration: none;
+}
+
+#menu li {
+    padding: 1px 5px 1px 5px;
+}
+
+.session_dependent {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+#menu li button {
+    font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+    font-size: 16px;
+    width: 140px;
+    background-color: rgb(12, 12, 85);
+    color: white;
+    border: none;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-radius: 0.5em;
 }
 
-tr:nth-child(even) {
-    background-color: #2e2d2d;
-}
-
-#para {
+#page_name {
     width: 50%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+#page_name a:hover {
+    text-decoration: none;
+}
+
+#menu_wrapper {
+    width: 50%;
+    display: flex; 
+    justify-content: flex-end;
+    transform: translate(0%, 25%);
+}
+
+#menu_bar {
+    margin-left: 1em;
+}
+
+.filter {
+    position: fixed;
+    width: 50px;
+    bottom: 20px;
+    right: 1.5%;
+    max-width: fit-content;
+    padding: 10px;
+    color: rgb(12, 12, 85);
+}
+
+.filter:hover {
+    color: rgb(32, 32, 231);
+}
+
+.poster {
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 0.3em;
+    color: rgb(12, 12, 85);
+}
+
+.timestamp {
+    padding-top: 0.3em;
+    color: darkgray;
+    font-size: 14px;
+}
+
+.post_footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page_change {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
     margin: auto;
-    padding-left: 1em;
-    padding-right: 1em;
-    border: 1px white solid;
-    background-color: #2e2d2d;
-    border-radius: 1em;
+    color: rgb(12, 12, 85);
 }
 
-#stats {
-    display: flex;
-    padding-left: 20%;
-    padding-right: 20%;
-    justify-content: space-around;
+.page_number {
+    padding-top: 0.75%;
 }
 
-#stats > div {
-    padding: 15px;
-    text-align: center;
+.arrow {
+    font-size: 24px;
+    color: rgb(12, 12, 85);
 }
 
-div > span {
-    font-size: 40px;
+.arrow:hover {
+    color: rgb(32, 32, 231);
 }
 
-#all-reviews {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1em;
+.fa-heart {
+    color: darkgray;
 }
 
-#row1 {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+.fa-edit {
+    color: darkgray;
 }
 
-#row2 {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+.fa-trash {
+    color: darkgray;
 }
 
-.review {
-    padding-left: 4%;
-    padding-right: 4%;
-    border: 1px solid white;
-    border-radius: 1em;
-    display: grid;
-}
-
-.reviewer-name {
-    font-weight: bold;
-    font-style: italic;
-    justify-self: right;
-}
-
-#center {
-    margin: auto;
-    max-width: 75%;
-    padding-bottom: 1em;
-}
-
-#titleimg {
-    width: 100%;
-}
-
-form {
-    max-width: 50%;
-    margin: auto;
-    background-color: #2e2d2d;
-    padding: 0.5em 2em 0.5em 2em;
-    border: 1px white solid;
-    border-radius: 1em;
-}
-
-#e404 {
-    text-align: center;
-}
-
-#e404 > h1 {
-    font-size: 150px;
-    font-family: "Inclusive Sans", "Helvetica", Arial, sans-serif;
-}
-
-#e404 > a {
-    color: white;
-}
-
-strong {
-    color: red;
-}
-
-em {
-    color: aqua;
-}
-
-#sale {
-    font-size: 50px;
-    text-align: center;
-    color: red;
-    margin-top: 0.5em;
-}
-
-#sale_form {
-    text-align: center;
+.content.signup {
+    background-color: white;
+    max-width: 60%;
     margin-top: 1em;
+    padding: 0.5em 2em 0.5em 2em;
+    border-radius: 1em;
+    box-shadow: 0 0 3px rgb(137, 137, 227);
+}
+
+#submit {
+    border-radius: 1em;
+    border: none;
+    padding: 1em 2em;
+    background-color: rgb(212, 229, 235);
+}
+
+.notice {
+    color: crimson;
+}
+
+#textarea_wrapper {
+    width: 90%
+}
+
+#post {
+    width: 100%;
 }

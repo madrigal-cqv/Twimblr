@@ -1,0 +1,18 @@
+mixin post(username, text, timestamp, likes, post_id)
+  .post(id=`${post_id}`)
+    .poster 
+      span #{username}
+      div 
+        a(href=`/edit/post?post_id=${post_id}`, id=`e-${post_id}`)
+          i.fa.fa-edit
+        | 
+        a(href="javascript:void(0);", id=`d-${post_id}`)
+          i.fa.fa-trash
+    .text #{text}
+    div(class="post_footer")
+      .timestamp #{timestamp.toLocaleString()}
+      div
+        span(id=`l-${post_id}`) #{likes}
+        | 
+        a.heart(href="javascript:void(0);", id=`h-${post_id}`)
+          i.fa.fa-heart

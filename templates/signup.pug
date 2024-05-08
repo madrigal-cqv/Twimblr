@@ -1,0 +1,33 @@
+include include/head.pug
+
+doctype html
+html(lang="en")
+  +head("Twimblr - Sign up")
+  script(src="/js/form.js", defer)
+  body
+    include include/navbar.pug
+    include include/menu.pug
+    .content.signup
+      h1 Sign up for a new account
+      form#form(action="/signup" method="POST")
+        p
+          label(for="username") Username* 
+          input#username(type="text", name="username", placeholder="Username", required)
+          | 
+          span(class="notice") Max 100 characters
+        p
+          label(for="password") Password* 
+          input#password(type="password", name="password", placeholder="password", required)
+          | 
+          span(class="notice") Max 100 characters
+        p
+          label(for="password_re") Retype password* 
+          input#password_re(type="password", name="password_re", placeholder="password", required)
+          | 
+          span#pass_verif(class="notice")
+        p
+          label(for="tos") I have read and agreed to Twimblr Terms of Services* 
+          input#tos(type="checkbox", name="tos", required)
+        p
+          button#submit Submit
+        p.notice#submit_noti

@@ -1,0 +1,18 @@
+ul#menu
+  li
+    button(id="toggle_style") Dark mode
+  | ---------------------------
+  li
+    a(href="/post") New post
+  | ---------------------------
+  li
+    a(href="/edit/username") Change username
+  li
+    a(href="/edit/password") Change password
+  | ---------------------------
+  li
+    form(action="/signout" method="POST")
+      button#signout Sign out
+  li
+    form(action="/delete/account" method="POST")
+      button#delete_acc Delete account

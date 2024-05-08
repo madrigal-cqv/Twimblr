@@ -1,51 +1,51 @@
 body {
-    color: black;
-    background-color: bisque;
+    background-color: black;
 }
 
-h1 {
-    color: maroon;
+.page_change {
+    color: white;
 }
 
-nav {
-    background-color: beige;
+.post {
+    background-color: rgb(12, 12, 85);
+    color: rgb(233, 233, 251);
 }
 
-nav > a {
-    color: #18181a;
-    border: 1px solid #18181a;
+.poster {
+    color: white;
 }
 
-nav > a:hover {
-    background-color: bisque;
+.arrow {
+    font-size: 24px;
+    color: white;
 }
 
-#para {
-    background-color: beige;
-    border: 1px #18181a solid;
+.arrow:hover {
+    color: rgb(200, 200, 255);
 }
 
-.review {
-    border: 1px solid #18181a;
+.filter {
+    color: white;
 }
 
-form {
-    background-color: beige;
-    border: 1px #18181a solid;
+.filter:hover {
+    color: rgb(200, 200, 255);
 }
 
-th, td {
-    border: 0.5px #18181a solid;
+.content.signup {
+    background-color: rgb(12, 12, 85);
+    color: white;
 }
 
-tr:nth-child(even) {
-    background-color: beige;
+#menu, #filter {
+    background-color: rgb(12, 12, 85);
+    color: white;
 }
 
-em {
-    color: blue;
+#filter a {
+    color: white;
 }
 
-#e404 > a {
-    color: #18181a;
+#menu li button {
+    background-color: black;
 }

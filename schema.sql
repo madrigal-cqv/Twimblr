@@ -1,24 +1,20 @@
-CREATE table sale (
-    sale text not null,
-    start_time timestamp not null default CURRENT_TIMESTAMP,
-    end_time timestamp
+CREATE table users (
+    username varchar(100) NOT NULL,
+    password varchar(100) NOT NULL,
+    primary key(username)
 );
 
-INSERT INTO sale (sale) VALUES ('15% off all items');
-
-UPDATE sale SET end_time=CURRENT_TIMESTAMP WHERE end_time IS NULL;
-
-SELECT * FROM sale ORDER BY start_time DESC LIMIT 3;
-
-CREATE table contacts (
-    name text not null,
-    email text not null,
-    type text not null,
-    deadline date not null,
-    size int not null,
-    id int not null
+CREATE table posts (
+    post_id int not null auto_increment,
+    username varchar(100) not null,
+    post varchar(255) not null,
+    post_time timestamp not null default CURRENT_TIMESTAMP,
+    likes int not null default 0,
+    primary key(post_id),
+    -- https://stackoverflow.com/questions/1668695/updating-foreign-key-values
+    foreign key(username) references users(username) on update cascade
 );
 
-INSERT INTO contacts (name, email, type, deadline, size, id) values ("a", "b@umn.edu", "", "2000-01-01", 0, 0);
+insert into users (username, password) values ("placeholder", "placeholder");
 
--- Any data added during testing have been cleaned --
+insert into posts (username, post) values ("placeholder", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fringilla massa sed nisi sagittis faucibus. Praesent sed magna eros.");

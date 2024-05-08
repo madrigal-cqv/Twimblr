@@ -1,0 +1,19 @@
+include include/head.pug
+
+doctype html
+html(lang="en")
+  +head("Twimblr - New post")
+  script(src="/js/post.js", defer)
+  body
+    include include/navbar.pug
+    include include/menu.pug
+    .content.signup
+      h1 Post 
+      form#form(action="/post" method="POST")
+        p
+          label(for="post") Post* 
+          div#textarea_wrapper
+            textarea#post(name="post", placeholder="Say something...", rows="7", required)
+        p
+          button#submit Post
+        p.notice#submit_noti

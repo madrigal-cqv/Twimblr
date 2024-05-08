@@ -6,46 +6,81 @@ const mysql = require(`mysql-await`); // npm install mysql-await
 var connPool = mysql.createPool({
   connectionLimit: 5, // it's a shared resource, let's not go nuts.
   host: "127.0.0.1",// this will work
-  user: "",
-  database: "",
-  password: "", // we really shouldn't be saving this here long-term -- and I probably shouldn't be sharing it with you...
+  user: "C4131F23U218",
+  database: "C4131F23U218",
+  password: "47574", // we really shouldn't be saving this here long-term -- and I probably shouldn't be sharing it with you...
 });
 
 // later you can use connPool.awaitQuery(query, data) -- it will return a promise for the query results.
 
-async function addContact(data){
-    // you CAN change the parameters for this function. please do not change the parameters for any other function in this file.
-  return await connPool.awaitQuery("insert into contacts (name, email, type, deadline, size, id) values (?, ?, ?, ?, ?, ?)", 
-                  [data.name, data.email, data.type, data.deadline, data.size, data.id]);
+async function getPost(post_id) {
+    return await connPool.awaitQuery("select * from posts where post_id = ?", [post_id]);
 }
 
-async function deleteContact(id){
-  let success = await connPool.awaitQuery("delete from contacts where id=?", [id]);
-  if (success.affectedRows == 1) {
+async function addPost(username, post) {
+    return await connPool.awaitQuery("insert into posts (username, post) values (?, ?)", [username, post]);
+}
+
+async function deletePost(post_id) {
+    return await connPool.awaitQuery("delete from posts where post_id = ?", [post_id]);
+}
+
+async function editPost(post_id, new_content) {
+    return await connPool.awaitQuery("update posts set post = ? where post_id = ?", [new_content, post_id]);
+}
+
+async function addUser(data) {
+    return await connPool.awaitQuery("insert into users (username, password) values (?, ?)", [data.username, data.password])
+}
+
+async function deleteUser(username) {
+    let delete_post = await connPool.awaitQuery("delete from posts where username = ?", [username]);
+    let delete_user = await connPool.awaitQuery("delete from users where username = ?", [username]);
+    return delete_user.afffectedRows != 0
+}
+
+async function checkUser(username) {
+    let res = await connPool.awaitQuery("select * from users where username = ?", [username]);
+    if (res.length == 0) {
+        return false;
+    }
     return true;
-  }
-  return false;
 }
 
-async function getContacts() {
-  return await connPool.awaitQuery("select * from contacts")
+async function validateUser(username, password) {
+    let res = await connPool.awaitQuery("select * from users where username = ? and password = ?", [username, password]);
+    if (res.length == 0) {
+        return false;
+    }
+    return true;
 }
 
-async function addSale(message) {
-  return await connPool.awaitQuery("insert into sale (sale, start_time) values (?, CURRENT_TIMESTAMP)", [message]);
+async function updateUsername(curr, aft) {
+    return await connPool.awaitQuery("update users set username = ? where username = ?", [aft, curr]);
 }
 
-async function endSale() {
-  return await connPool.awaitQuery("update sale set end_time=CURRENT_TIMESTAMP where end_time is NULL");
+async function updatePassword(username, password) {
+    return await connPool.awaitQuery("update users set password = ? where username = ?", [password, username])
 }
 
-// I added this function
-async function getActiveSales() {
-  return await connPool.awaitQuery("select * from sale where end_time is null order by start_time asc")
+async function getPosts() {
+    return await connPool.awaitQuery("select * from posts order by post_time desc");
 }
 
-async function getRecentSales() {
-  return await connPool.awaitQuery("select * from sale order by start_time desc limit 3");
+async function getPostsByLikes() {
+    return await connPool.awaitQuery("select * from posts order by likes desc");
 }
 
-module.exports = {addContact, getContacts, deleteContact, addSale, endSale, getActiveSales, getRecentSales}
+async function getLikes(post_id) {
+    return await connPool.awaitQuery("select likes from posts where post_id = ?", [post_id]);
+}
+
+async function increaseLike(post_id) {
+    return await connPool.awaitQuery("update posts set likes = likes + 1 where post_id = ?", [post_id]);
+}
+
+async function decreaseLike(post_id) {
+    return await connPool.awaitQuery("update posts set likes = likes - 1 where post_id = ?", [post_id]);
+}
+
+module.exports = {getPost, addPost, deletePost, editPost, addUser, deleteUser, checkUser, validateUser, updateUsername, updatePassword, getPosts, getPostsByLikes,  getLikes, increaseLike, decreaseLike}

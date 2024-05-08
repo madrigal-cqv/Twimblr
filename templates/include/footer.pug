@@ -1,0 +1,24 @@
+mixin footer(number)
+  div(class="page_change")
+    if filter == "most_liked"
+      if number > 1
+        a.arrow(href=`/?filter=most_liked&page=${number-1}`)
+          i.fa.fa-chevron-left
+      else 
+        a.arrow(href=`/?filter=most_liked&page=${number-1}` style="visibility: hidden")
+          i.fa.fa-chevron-left
+      div(class="page_number") Page #{number}
+      a.arrow(href=`/?filter=most_liked&page=${number+1}`)
+        i.fa.fa-chevron-right
+    else 
+      if number > 1
+        a.arrow(href=`/?page=${number-1}`)
+          i.fa.fa-chevron-left
+      else 
+        a.arrow(href=`/?page=${number-1}` style="visibility: hidden")
+          i.fa.fa-chevron-left
+      div(class="page_number") Page #{number}
+      a.arrow(href=`/?page=${number+1}`)
+        i.fa.fa-chevron-right
+  a.filter(href="javascript:void(0);")
+    i.fa.fa-filter.fa-2x#filter_tog

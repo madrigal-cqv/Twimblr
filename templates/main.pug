@@ -1,0 +1,15 @@
+include include/head.pug
+include include/footer.pug
+include include/post.pug
+
+doctype html
+html(lang="en")
+  +head("Twimblr")
+  body 
+    include include/navbar.pug
+    include include/menu.pug
+  .content
+    each post of posts 
+      +post(post.username, post.post, post.post_time, post.likes, post.post_id)
+    +footer(page)
+    include include/filter.pug

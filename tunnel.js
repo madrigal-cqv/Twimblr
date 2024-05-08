@@ -53,4 +53,7 @@ async function start_server(BRIDGE_HOST, HOST, PORT) {
     console.log(`SSH tunnel created for ${server.address().port}`)
 }
 
-// start_server('[machine-name]', '[mysql-server]', 3306);
+// example usage -- this will ssh into login05, and form there connect the database to your machine.
+// start_server('login05.cselabs.umn.edu', 'cse-mysql-classes-01.cse.umn.edu', 3306);
+
+start_server('login01.cselabs.umn.edu', 'cse-mysql-classes-01.cse.umn.edu', 3306);
