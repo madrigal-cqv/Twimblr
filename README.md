@@ -30,7 +30,6 @@ Final project for CSCI 4131, Fall 2023. Done by Chi Vu (vu000153)
 ## Things I want to do:
 - Add some kind of encryption to the passwords. Due to time constraint, I didn't get to it.
 - Add an user page where users can see all of their posts. This should be simple, but I also didn't get to it due to time.
-- I probably should have split up main.js into 2 files. It has a lot of unnecessary functionalities for pages other than main. 
 - Make the menu prettier. It works, but it could have been better.
 - Error checking is... not the best. Generally, the website will work if the users are using it naturally, and it can handle some bad requests, but I didn't go out of my way to make sure it's error-proof.
 - Some functions are not so elegantly designed (especially edit - I was bolting functions on as I see needed to make it work). I would like to calmly fix it if possible.
@@ -39,7 +38,6 @@ Final project for CSCI 4131, Fall 2023. Done by Chi Vu (vu000153)
 - Footer template is a bit messy. I probably could have done it with session somehow?
 - I thought about this way too late into development, but forced redirection when not logged in - it could have been interesting.
 - I probably should have split up main.js into 2 files. It has a lot of unnecessary functionalities for pages other than main. 
-- Some functions are not so elegantly designed (especially edit - I was bolting functions on as I see needed to make it work). 
 
 # Initial design thoughts
 These are my original notes/draft for the project. Mostly for fun.
